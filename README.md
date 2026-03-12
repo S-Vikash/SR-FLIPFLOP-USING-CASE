@@ -42,6 +42,18 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 ```
 Developed by: VIKASH S
 RegisterNumber: 212225230302
+module exp6(S,R,c1k,Q,Qbar);
+input S,R,c1k;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge c1k)
+begin
+Q=S|((~R)&Q);
+Qbar=R|((~S)&(Qbar));
+end
+endmodule
 */
 ```
 
